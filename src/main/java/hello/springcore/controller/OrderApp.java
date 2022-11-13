@@ -22,6 +22,7 @@ public class OrderApp {
 //        OrderService orderService = appConfig.orderService();
 
 //        3. 스프링 컨테이너 사용, AppConfig 에서 수동 등록한 Bean 을 조회하여 사용
+//        Spring Container = BeanFactory + ApplicationContext 이지만, BeanFactory 를 직접 사용하는 경우는 거의 없어 Spring Container = ApplicationContext 라고 부르는 것이 일반적
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
         OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
